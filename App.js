@@ -1,31 +1,24 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./screens/HomeScreen";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { Button, Pressable, View } from "react-native";
+import IndexScreen from "./screens/IndexScreen";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer initialRouteName="Home">
+    <NavigationContainer initialRouteName="index">
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="index"
           options={{
             title: "Game Store",
             headerTitleStyle: {
               fontWeight: "bold",
               color: "#3669C9",
             },
-            // headerRight: () => (
-            //   <FontAwesome5 name="bell" size={24} color="black" />
-            // ),
-            // headerLeft: () => {},
           }}
-          component={HomeScreen}
+          component={IndexScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

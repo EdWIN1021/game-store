@@ -7,7 +7,7 @@ const Carousel = () => {
   const { games, loading } = useGames();
 
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         data={games}
         renderItem={({ item }) => <CarouselItem game={item} />}
@@ -20,8 +20,4 @@ const Carousel = () => {
 
 export default Carousel;
 
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 12,
-  },
-});
+const styles = StyleSheet.create({});

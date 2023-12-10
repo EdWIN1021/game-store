@@ -27,7 +27,7 @@ export default GameCard;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    padding: 12,
+    padding: 10,
     flex: 1,
     flexDirection: "column",
     alignItems: "center",

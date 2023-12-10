@@ -8,13 +8,15 @@ import TopGames from "../components/TopGames";
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.screen}>
-      <Search />
-      <Carousel />
-      <CategoriesTab />
-      <NewRelease />
-      <TopGames />
-    </ScrollView>
+    <View style={{ height: "100%" }}>
+      <ScrollView style={styles.screen}>
+        <Search />
+        <Carousel />
+        <CategoriesTab />
+        <NewRelease />
+        <TopGames />
+      </ScrollView>
+    </View>
   );
 };
 
@@ -24,7 +26,6 @@ const styles = StyleSheet.create({
   screen: {
     paddingHorizontal: 15,
     height: "100%",
-    // backgroundColor: "#FFF",
     borderRadius: 10,
   },
 });
