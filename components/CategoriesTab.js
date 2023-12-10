@@ -6,11 +6,13 @@ import {
   Pressable,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import useGenres from "../hooks/useGenres";
 
 const CategoriesTab = () => {
   const { genres, loading } = useGenres();
+
+  const [active, setActive] = useState("Action");
 
   return (
     <View style={{ marginVertical: 15 }}>
@@ -22,14 +24,19 @@ const CategoriesTab = () => {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={{
-              backgroundColor: "#3669C9",
+              backgroundColor: active === item.name ? "#3669C9" : "#FFF",
               borderRadius: 20,
               paddingHorizontal: 16,
               paddingVertical: 8,
               marginRight: 8,
             }}
           >
-            <Text style={{ color: "#FFF", fontWeight: "500" }}>
+            <Text
+              style={{
+                color: active === item.name ? "#FFF" : "#000",
+                fontWeight: "500",
+              }}
+            >
               {item.name}
             </Text>
           </TouchableOpacity>

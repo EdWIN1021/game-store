@@ -8,8 +8,13 @@ const NewRelease = () => {
 
   return (
     <View>
-      <Text style={styles.title}>New Release</Text>
+      <View style={{ flexDirection: "row", alignItems: "baseline" }}>
+        <Text style={styles.title}>New Release</Text>
+        <Text style={{ fontSize: 12, color: "#3669C9" }}>See All</Text>
+      </View>
+
       <FlatList
+        columnWrapperStyle={{ gap: 10 }}
         numColumns={2}
         data={games}
         renderItem={({ item }) => <GameCard game={item} />}
@@ -26,5 +31,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 18,
+    flex: 1,
   },
 });
