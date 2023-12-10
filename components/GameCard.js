@@ -14,7 +14,9 @@ const GameCard = ({ game }) => {
       >
         {game?.name}
       </Text>
-      <Text style={{ color: "#6A6A6A" }}>release {game.released}</Text>
+      <Text style={{ color: "#6A6A6A" }}>
+        release {game.released.replaceAll("-", "/")}
+      </Text>
       <Text style={{ color: "#6A6A6A" }}>{"$79.99"}</Text>
     </View>
   );

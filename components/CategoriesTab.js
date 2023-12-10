@@ -15,11 +15,11 @@ const CategoriesTab = () => {
   const [active, setActive] = useState("Action");
 
   return (
-    <View style={{ marginVertical: 15 }}>
+    <View style={{ marginTop: 16 }}>
       <Text style={styles.title}>Categories</Text>
 
       <FlatList
-        style={{ marginVertical: 15 }}
+        style={{ marginVertical: 16 }}
         data={genres}
         renderItem={({ item }) => (
           <TouchableOpacity

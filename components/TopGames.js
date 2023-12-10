@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
-import useNewRelease from "../hooks/useNewRelease";
 import GameCard from "./GameCard";
+import useTopGames from "../hooks/useTopGames";
 
-const NewRelease = () => {
-  const { games, loading } = useNewRelease(2);
+const TopGames = () => {
+  const { games, loading } = useTopGames(2);
 
   return (
     <View>
       <View style={{ flexDirection: "row", alignItems: "baseline" }}>
-        <Text style={styles.title}>New Releases</Text>
+        <Text style={styles.title}>Top Games</Text>
         <Text style={{ fontSize: 12, color: "#3669C9" }}>See All</Text>
       </View>
 
@@ -24,7 +24,7 @@ const NewRelease = () => {
   );
 };
 
-export default NewRelease;
+export default TopGames;
 
 const styles = StyleSheet.create({
   title: {

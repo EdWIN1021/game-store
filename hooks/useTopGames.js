@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import { rawg } from "../instance";
 
-const useGames = () => {
+const useTopGames = (size) => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getGames = async () => {
+    const getTopGames = async () => {
       try {
         setLoading(true);
-        const res = await rawg.get("/games/lists/greatest", {
+        const res = await rawg.get("/games/lists/popular", {
           params: {
             page: 1,
-            page_size: 10,
+            page_size: size,
             discover: true,
-            ordering: "-added",
           },
         });
         if (res.status === 200) {
@@ -27,10 +26,10 @@ const useGames = () => {
       }
     };
 
-    getGames();
+    getTopGames();
   }, []);
 
   return { games, loading };
 };
 
-export default useGames;
+export default useTopGames;
