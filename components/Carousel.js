@@ -3,11 +3,11 @@ import React from "react";
 import useGames from "../hooks/useGames";
 import CarouselItem from "./CarouselItem";
 
-const Carousel = () => {
-  const { games, loading } = useGames();
+const Carousel = ({ url }) => {
+  const { games, loading } = useGames(url);
 
   return (
-    <View>
+    <View style={{ marginVertical: 16 }}>
       <FlatList
         data={games}
         renderItem={({ item }) => <CarouselItem game={item} />}

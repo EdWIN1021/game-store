@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { rawg } from "../instance";
 
-const useGames = () => {
+const useGames = (url) => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -9,14 +9,9 @@ const useGames = () => {
     const getGames = async () => {
       try {
         setLoading(true);
-        const res = await rawg.get("/games/lists/greatest", {
-          params: {
-            page: 1,
-            page_size: 10,
-            discover: true,
-            ordering: "-added",
-          },
-        });
+        const res = await rawg.get(url);
+
+        console.log(res);
         if (res.status === 200) {
           setGames(res.data.results);
         }

@@ -3,7 +3,6 @@ import {
   Text,
   View,
   FlatList,
-  Pressable,
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
@@ -15,11 +14,11 @@ const CategoriesTab = () => {
   const [active, setActive] = useState("Action");
 
   return (
-    <View style={{ marginTop: 16 }}>
+    <View style={{ marginVertical: 8 }}>
       <Text style={styles.title}>Categories</Text>
 
       <FlatList
-        style={{ marginVertical: 16 }}
+        style={{ marginTop: 16 }}
         data={genres}
         renderItem={({ item }) => (
           <TouchableOpacity
